@@ -1,0 +1,10 @@
+com\pakages\servlet\ApartamentoServlet.class
+com\pakages\servlet\ResidenteServlet.class
+com\pakages\dao\Conexion.class
+com\pakages\entities\Residente.class
+com\pakages\dao\ApartamentoDAO.class
+com\pakages\dao\ResidenteDAO.class
+com\pakages\entities\Apartamento.class
+com\pakages\entities\Torre.class
+com\pakages\servlet\EventoServlet.class
+com\pakages\entities\Habitante.class

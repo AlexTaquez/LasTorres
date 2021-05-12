@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <!--servlet>
+        <servlet-name>ApartamentoServlet</servlet-name>
+        <servlet-class>com.pakages.servlet.ApartamentoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EventoServlet</servlet-name>
+        <servlet-class>com.pakages.servlet.EventoServlet</servlet-class>
+    </servlet-->
+    <servlet> 
+        <servlet-name>webRest</servlet-name> 
+        <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class> 
+        <init-param> 
+            <param-name>com.sun.jersey.config.property.packages</param-name>
+            <param-value>com.pakages</param-value>
+        </init-param>
+        <init-param>
+            <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+            <param-value>true</param-value>           
+        </init-param>
+        
+        <load-on-startup>1</load-on-startup>
+        
+    </servlet>
+    
+    
+    <!--servlet-mapping>
+        <servlet-name>ApartamentoServlet</servlet-name>
+        <url-pattern>/ApartamentoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EventoServlet</servlet-name>
+        <url-pattern>/EventoServlet</url-pattern>
+    </servlet-mapping-->
+    <servlet-mapping>
+        <servlet-name>webRest</servlet-name>
+        <url-pattern>/rest/*</url-pattern> 
+    </servlet-mapping>
+    
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
