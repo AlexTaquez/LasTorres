@@ -8,21 +8,22 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>residente</title>
-    </head>
+    <%@include file="../platillas/head.html" %>
     <body>
         <%@include file="../platillas/menubar.html" %>
-        
+       
         <h1>Nuevo Residente</h1>
         
-        <form action="residente" method="post" class="container">
+        <form action="../../residente" method="post" class="container">
             <label for="id">N° Identificacion</label>
             <input type="number" name="id" id="id" required="true" requiredMessage="Este campo es obligatorio" maxlength="15" min="5"/>
             
             <label for="tipo">Tipo documento</label>
-            <input type="text" name="tipo" id="tipo" required="true" requiredMessage="Este campo es obligatorio"/>
+            <select id="tipo">
+                <option value="CC" selected>CC</option>
+                <option value="CE">CE</option>
+                <option value="TI">TI</option>
+            </select>
             
             <label for="nombres">Nombres</label>
             <input type="text" name="nombres" id="nombres" required="true" requiredMessage="Este campo es obligatorio"/>
@@ -36,7 +37,17 @@
             <label for="contacto">N° telefono</label>
             <input type="text" name="contacto" id="contacto"/>
             
+            <label for="torre">Torre del titular</label>
+            <select id="torre">
+                <option value="1">TORRE 1</option>
+                <option value="2">TORRE 2</option>
+                <option value="3">TORRE 3</option>
+                <option value="4">TORRE 4</option>
+            </select>
             
+            <div id="select">
+                <%@include file="vincular.jsp" %>
+            </div>
                     
             <button type="submit">Guardar</button>
         </form>

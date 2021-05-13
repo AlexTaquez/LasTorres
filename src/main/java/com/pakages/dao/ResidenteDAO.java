@@ -227,15 +227,15 @@ public class ResidenteDAO extends Conexion{
             }
         }
     }
-    //CONSULTAR
-    public Residente consultar(int id) throws SQLException{
+    //CONSULTAR POR NUMERO DE DOCUMENTO
+    public Residente consultarId(String id) throws SQLException{
         
         PreparedStatement ps;
         Connection con;
         con = getConnection();
         con.setAutoCommit(false);
         
-        String sql ="SELECT * FROM residente WHERE idResidente="+id;        
+        String sql ="SELECT * FROM residente WHERE numero="+id;        
         try{
             ps = con.prepareStatement(sql);
             ResultSet resultSet = ps.executeQuery(sql);
@@ -269,6 +269,50 @@ public class ResidenteDAO extends Conexion{
             }
         }
     }
+    
+    //CONSULTAR POR NUMERO DE DOCUMENTO
+    public Residente consultarUser(String user) throws SQLException{
+        
+        PreparedStatement ps;
+        Connection con;
+        con = getConnection();
+        con.setAutoCommit(false);
+        
+        String sql ="SELECT * FROM residente WHERE usuario='"+user+"'"; 
+        try{
+            ps = con.prepareStatement(sql);
+            ResultSet resultSet = ps.executeQuery(sql);
+            if (resultSet.next()) {
+                Residente res = new Residente();
+                
+                res.setId(resultSet.getInt(1));
+                res.setNumero(resultSet.getString(2));
+                res.setTipoId(resultSet.getString(3));
+                res.setNombres(resultSet.getString(4));
+                res.setApellidos(resultSet.getString(5));
+                res.setUsuario(resultSet.getString(6));
+                res.setContacto(resultSet.getString(7));
+                res.setActivo(resultSet.getBoolean(8));
+                res.setTitular(resultSet.getInt(9));
+                
+                return res;
+            }
+            
+            //System.out.println("RETURN");
+            return null;
+            
+        }catch(SQLException e){
+            System.err.println("Error al incertar>>>  "+e);
+            return null;
+        }finally{
+            try{
+                con.close();
+            }catch(SQLException e){
+                System.err.println("Erros al intentar cerrar>>>"+ e);
+            }
+        }
+    }
+    
     //ACTUALIZAR
     public boolean actualizar(Residente res) throws SQLException{
         PreparedStatement ps;

@@ -110,6 +110,7 @@ public class ApartamentoDAO extends Conexion {
             apt.setArriendo(resultSet.getDouble(5));
             apt.setEstado(resultSet.getString(6));
             apt.setDescripcion(resultSet.getString(7));
+            apt.setTorre(resultSet.getInt(8));
             
             lista.add(apt);
         }
@@ -125,7 +126,7 @@ public class ApartamentoDAO extends Conexion {
        con = getConnection();
        con.setAutoCommit(false);
        
-       String sql = "SELECT * FROM apartamento WHERE idTorre="+idTorre+" AND estado='D' ";
+       String sql = "SELECT * FROM apartamento WHERE idTorre="+idTorre+" AND estado='D' ";//8 columnas
        ps = con.prepareStatement(sql);
        ResultSet resultSet = ps.executeQuery(sql);
        
@@ -140,6 +141,7 @@ public class ApartamentoDAO extends Conexion {
             apt.setArriendo(resultSet.getDouble(5));
             apt.setEstado(resultSet.getString(6));
             apt.setDescripcion(resultSet.getString(7));
+            apt.setTorre(resultSet.getInt(8));
             
             lista.add(apt);
         }

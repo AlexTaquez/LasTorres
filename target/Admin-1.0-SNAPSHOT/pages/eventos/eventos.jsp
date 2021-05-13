@@ -7,12 +7,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Eventos</title>
-    </head>
+    <%@include file="../platillas/head.html" %>
     <body>
-                <%@include file="../platillas/menubar.html" %>
+        <%@include file="../platillas/menubar.html" %>
         <h1>Eventos</h1>
     </body>
 </html>

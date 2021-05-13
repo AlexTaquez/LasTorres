@@ -89,7 +89,7 @@ public class ResidenteServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-       /* Residente res = new Residente();
+       Residente res = new Residente();
         
         res.setNumero(request.getParameter("id"));
         res.setTipoId(request.getParameter("tipo"));
@@ -98,8 +98,21 @@ public class ResidenteServlet extends HttpServlet {
         res.setUsuario(request.getParameter("usuario"));
         res.setContacto(request.getParameter("contacto"));
         res.setActivo(true);
-        res.setTitular(0);*/
+        res.setTitular(0);
         
+        ResidenteDAO dao = new ResidenteDAO();
+        
+        try {
+            List<Residente> lista = null;
+            dao.registrar(res);
+            lista = dao.lista(4);
+            request.setAttribute("lista", lista);
+            request.setAttribute("torre", "TORRE 1");
+            request.getRequestDispatcher("/pages/residentes/residentes.jsp").forward(request, response);
+                    
+        } catch (SQLException ex) {
+            Logger.getLogger(ResidenteServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         request.getRequestDispatcher("/Admin/residente?torre=1").forward(request, response);;
     }
