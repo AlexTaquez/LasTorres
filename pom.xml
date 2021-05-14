@@ -71,6 +71,13 @@
             <artifactId>jersey-client</artifactId>
             <version>1.19</version>
         </dependency>
+        <!-- DEPENDECIAS PARA EL CROS -->
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.4.5</version>
+        </dependency>
         
     </dependencies>
 
