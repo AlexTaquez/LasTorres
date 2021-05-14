@@ -15,41 +15,55 @@
         <h1>Nuevo Residente</h1>
         
         <form action="../../residente" method="post" class="container">
-            <label for="id">N° Identificacion</label>
+                      
+            <label for="id">N° Identificacion *</label>
             <input type="number" name="id" id="id" required="true" requiredMessage="Este campo es obligatorio" maxlength="15" min="5"/>
             
-            <label for="tipo">Tipo documento</label>
+            <label for="tipo">Tipo documento *</label>
             <select id="tipo">
                 <option value="CC" selected>CC</option>
                 <option value="CE">CE</option>
                 <option value="TI">TI</option>
             </select>
-            
-            <label for="nombres">Nombres</label>
+            <br>
+            <label for="nombres">Nombres *</label>
             <input type="text" name="nombres" id="nombres" required="true" requiredMessage="Este campo es obligatorio"/>
             
-            <label for="apellidos">Apellidos</label>
+            <label for="apellidos">Apellidos *</label>
             <input type="text" name="apellidos" id="apellidos" required="true" requiredMessage="Este campo es obligatorio"/>
             
-            <label for="usuario">G-mail</label>
+            <label for="usuario">G-mail *</label>
             <input type="text" name="usuario" id="usuario" required="true" requiredMessage="Este campo es obligatorio"/>
             
             <label for="contacto">N° telefono</label>
             <input type="text" name="contacto" id="contacto"/>
             
-            <label for="torre">Torre del titular</label>
-            <select id="torre">
-                <option value="1">TORRE 1</option>
-                <option value="2">TORRE 2</option>
-                <option value="3">TORRE 3</option>
-                <option value="4">TORRE 4</option>
+            <label for="torre">Torre del Apartamento *</label>
+            <select id="torre" name="torre">
+                <option value="4" selected>TORRE 1</option>
+                <option value="14">TORRE 2</option>
+                <option value="24">TORRE 3</option>
+                <option value="34">TORRE 4</option>
             </select>
+            <br>
             
-            <div id="select">
-                <%@include file="vincular.jsp" %>
+            <label for="apt">Apartamento *</label>
+            <input type="text" name="apt" id="apt" required="true" disabled />
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal1" onclick="listaApts()">Seleccionar</a>         
+            
+            <br>
+            <button id="btnGuardar" type="submit" disabled="true">Guardar</button>
+        </form>        
+                
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal" style="height: 80%">
+            <div class="modal-content" >
+                <ul id="selApts"></ul>
             </div>
-                    
-            <button type="submit">Guardar</button>
-        </form>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+            </div>
+        </div>
+        
     </body>
 </html>
