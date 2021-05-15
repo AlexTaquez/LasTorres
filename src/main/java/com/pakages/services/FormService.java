@@ -11,12 +11,12 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
+//import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
-/**
- *
- * @author Usuario
- */
-@CrossOrigin(origins="*")
+@RestController
+@CrossOrigin(origins="*", methods= {RequestMethod.GET})
 @Path("/form")
 public class FormService {
     
