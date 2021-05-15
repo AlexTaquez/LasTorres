@@ -1,12 +1,14 @@
 package com.pakages.servlet;
 
 import com.pakages.dao.ApartamentoDAO;
+import com.pakages.dao.ObtenerFecha;
 import com.pakages.dao.ResidenteDAO;
 import com.pakages.entities.Apartamento;
 import com.pakages.entities.Habitante;
 import com.pakages.entities.Residente;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
@@ -17,6 +19,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import java.text.SimpleDateFormat; 
+import java.util.Date;
 /**
  *
  * @author Usuario
@@ -28,8 +32,7 @@ public class ResidenteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //residente?torre=1
-        java.util.Date fecha = new Date();
+        //residente?torre=1        
         String option = request.getParameter("torre");        
         String id = request.getParameter("id");
         
@@ -40,8 +43,12 @@ public class ResidenteServlet extends HttpServlet {
             
             if(option==null && id==null){
                 //CREAR
-                //String hoy = fecha.toString();
+                ObtenerFecha objFecha=new ObtenerFecha();
+                SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+                String fecha = formato.format(objFecha.getNTPDate());
+
                 request.setAttribute("fecha", fecha);
+
                 request.getRequestDispatcher("/pages/residentes/crear.jsp").forward(request, response);
                 
             }else if(option!=null){
@@ -83,7 +90,17 @@ public class ResidenteServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-       java.util.Date fecha = new Date();
+       Date fecha2 = null;
+        ObtenerFecha objFecha=new ObtenerFecha();
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String fecha = formato.format(objFecha.getNTPDate());
+        try {
+            fecha2 = formato.parse(fecha);
+        } catch (ParseException ex) {
+            Logger.getLogger(ResidenteServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
        Residente res = new Residente();
        Habitante h = new Habitante();
         
@@ -97,7 +114,7 @@ public class ResidenteServlet extends HttpServlet {
         res.setTitular(0);
                 
         h.setIdApt(Integer. parseInt (request.getParameter("aptID")));
-        h.setInicio(fecha);
+        h.setInicio(fecha2);
         
         ResidenteDAO dao = new ResidenteDAO();
         
@@ -106,18 +123,22 @@ public class ResidenteServlet extends HttpServlet {
             dao.registrar(res);
             
             res.setId(dao.consultarId(res.getNumero()));
-            h.setId(res.getId());
+            h.setIdResidente(res.getId());
+            
+            dao.vincular(h);
+            dao.estado(h.getIdApt());
             
             lista = dao.lista(4);
             request.setAttribute("lista", lista);
             request.setAttribute("torre", "TORRE 1");
-            request.getRequestDispatcher("/pages/residentes/residentes.jsp").forward(request, response);
+            //request.getRequestDispatcher("/pages/residentes/residentes.jsp").forward(request, response);
+            request.getRequestDispatcher("/residente?torre=1").forward(request, response);
                     
         } catch (SQLException ex) {
             Logger.getLogger(ResidenteServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        request.getRequestDispatcher("/Admin/residente?torre=1").forward(request, response);
+        //request.getRequestDispatcher("/Admin/residente?torre=1").forward(request, response);
     }
 
 

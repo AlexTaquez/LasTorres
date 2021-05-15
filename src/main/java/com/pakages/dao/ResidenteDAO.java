@@ -18,9 +18,17 @@ public class ResidenteDAO extends Conexion{
         Connection con;
         con = getConnection();
         con.setAutoCommit(false);
-        String sql ="INSERT INTO residente"+
-                    " (numero, tipoId, nombres, apellidos, usuario, contato, activo, titular)"+
-                    " VALUES(?,?,?,?,?,?,?,?)";//8  
+        String sql ="";
+        if (residente.getTitular()!=0) {
+            sql ="INSERT INTO residente"+
+            " (numero, tipoId, nombres, apellidos, usuario, contato, activo, titular)"+
+            " VALUES(?,?,?,?,?,?,?,?)";//8 
+        }else{
+            sql ="INSERT INTO residente"+
+            " (numero, tipoId, nombres, apellidos, usuario, contato, activo)"+
+            " VALUES(?,?,?,?,?,?,?)";//7 
+        }
+        
         try{
             ps = con.prepareStatement(sql);
             ps.setString(1, residente.getNumero());
@@ -29,10 +37,11 @@ public class ResidenteDAO extends Conexion{
             ps.setString(4, residente.getApellidos());
             ps.setString(5, residente.getUsuario());
             ps.setString(6, residente.getContacto());
-            ps.setBoolean(7, residente.isActivo());
+            ps.setBoolean(7, residente.isActivo());         
             
-            ps.setInt(8, residente.getTitular());
-            
+            if (residente.getTitular()!=0) {
+                ps.setInt(8, residente.getTitular());                
+            }
             
             ps.execute();
             con.commit();
@@ -59,16 +68,48 @@ public class ResidenteDAO extends Conexion{
         Connection con;
         con = getConnection();
         con.setAutoCommit(false);
-        String sql ="INSERT INTO residente"+
-                    "(reside_fk, apt_fk, fechaRegistro, fechaSalida)"+
-                    " VALUES(?,?,?,?)";//4
+        String sql ="INSERT INTO reside_apt"+
+                    " (reside_fk, apt_fk, fechaRegistro)"+
+                    " VALUES(?,?,?);";//3
+        
+        Date inicio = new Date(residente.getInicio().getDay(), residente.getInicio().getMonth(), residente.getInicio().getYear());
+        
         try{
             ps = con.prepareStatement(sql);
             ps.setInt(1, residente.getIdResidente());
             ps.setInt(2, residente.getIdApt());
-            ps.setDate(3, (Date) residente.getInicio());
-            ps.setDate(4, (Date) residente.getFin());
+            ps.setDate(3, inicio);
+
             
+            ps.execute();
+            con.commit();
+            ps.close();
+            con.close();
+            //System.out.println("RETURN");
+            return true;
+            
+        }catch(SQLException e){
+            System.err.println("Error al incertar>>>  "+e);
+            return false;
+        }finally{
+            try{
+                con.close();
+            }catch(SQLException e){
+                System.err.println("Erros al intentar cerrar>>>"+ e);
+            }
+        }
+    }
+    //CAMBIAR ESTADO
+    public boolean estado(int apt) throws SQLException{
+        PreparedStatement ps;
+        Connection con;
+        con = getConnection();
+        con.setAutoCommit(false);
+        String sql ="UPDATE apartamento SET estado='O'"+
+                    " WHERE idApt="+apt;//2  
+        try{
+            ps = con.prepareStatement(sql);
+                       
             ps.execute();
             con.commit();
             ps.close();

@@ -14,6 +14,7 @@
        
         <h1>Nuevo Residente</h1>
         <p> <% out.print(request.getAttribute("fecha")); %>  </p>
+        <p> <% out.print(request.getAttribute("fecha2")); %>  </p>
         
         <form action="/residente" method="post" class="container">
                       
