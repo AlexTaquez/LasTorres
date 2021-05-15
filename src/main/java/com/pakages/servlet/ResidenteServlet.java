@@ -3,9 +3,11 @@ package com.pakages.servlet;
 import com.pakages.dao.ApartamentoDAO;
 import com.pakages.dao.ResidenteDAO;
 import com.pakages.entities.Apartamento;
+import com.pakages.entities.Habitante;
 import com.pakages.entities.Residente;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,6 +29,7 @@ public class ResidenteServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //residente?torre=1
+        java.util.Date fecha = new Date();
         String option = request.getParameter("torre");        
         String id = request.getParameter("id");
         
@@ -37,17 +40,8 @@ public class ResidenteServlet extends HttpServlet {
             
             if(option==null && id==null){
                 //CREAR
-                List<Residente> lista1, lista2, lista3, lista4 = null;
-                lista1 = dao.listaTitulares(4);
-                lista2 = dao.listaTitulares(14);
-                lista3 = dao.listaTitulares(24);
-                lista4 = dao.listaTitulares(34);
-                
-                request.setAttribute("lista", lista1);
-                request.setAttribute("lista", lista2);
-                request.setAttribute("lista", lista3);                
-                request.setAttribute("lista", lista4);
-                
+                //String hoy = fecha.toString();
+                request.setAttribute("fecha", fecha);
                 request.getRequestDispatcher("/pages/residentes/crear.jsp").forward(request, response);
                 
             }else if(option!=null){
@@ -89,7 +83,9 @@ public class ResidenteServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+       java.util.Date fecha = new Date();
        Residente res = new Residente();
+       Habitante h = new Habitante();
         
         res.setNumero(request.getParameter("id"));
         res.setTipoId(request.getParameter("tipo"));
@@ -99,12 +95,19 @@ public class ResidenteServlet extends HttpServlet {
         res.setContacto(request.getParameter("contacto"));
         res.setActivo(true);
         res.setTitular(0);
+                
+        h.setIdApt(Integer. parseInt (request.getParameter("aptID")));
+        h.setInicio(fecha);
         
         ResidenteDAO dao = new ResidenteDAO();
         
         try {
             List<Residente> lista = null;
             dao.registrar(res);
+            
+            res.setId(dao.consultarId(res.getNumero()));
+            h.setId(res.getId());
+            
             lista = dao.lista(4);
             request.setAttribute("lista", lista);
             request.setAttribute("torre", "TORRE 1");
@@ -114,7 +117,7 @@ public class ResidenteServlet extends HttpServlet {
             Logger.getLogger(ResidenteServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        request.getRequestDispatcher("/Admin/residente?torre=1").forward(request, response);;
+        request.getRequestDispatcher("/Admin/residente?torre=1").forward(request, response);
     }
 
 

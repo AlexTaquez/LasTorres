@@ -13,8 +13,9 @@
         <%@include file="../platillas/menubar.html" %>
        
         <h1>Nuevo Residente</h1>
+        <p> <% out.print(request.getAttribute("fecha")); %>  </p>
         
-        <form action="../../residente" method="post" class="container">
+        <form action="/residente" method="post" class="container">
                       
             <label for="id">N° Identificacion *</label>
             <input type="number" name="id" id="id" required="true" requiredMessage="Este campo es obligatorio" maxlength="15" min="5"/>
@@ -39,8 +40,9 @@
             <input type="text" name="contacto" id="contacto"/>
             
             <label for="torre">Torre del Apartamento *</label>
-            <select id="torre" name="torre">
-                <option value="4" selected>TORRE 1</option>
+            <select id="torre" name="torre" onchange="listaApts()">
+                <option value="0" selected disabled="true">SELECCIONE</option>
+                <option value="4">TORRE 1</option>
                 <option value="14">TORRE 2</option>
                 <option value="24">TORRE 3</option>
                 <option value="34">TORRE 4</option>
@@ -49,8 +51,9 @@
             
             <label for="apt">Apartamento *</label>
             <input type="text" name="apt" id="apt" required="true" disabled />
-            <a class="waves-effect waves-light btn modal-trigger" href="#modal1" onclick="listaApts()">Seleccionar</a>         
-            
+            <input type="number" name="aptID" id="aptID" required="true" hidden="true"/>
+            <!-- a class="waves-effect waves-light btn modal-trigger" href="#modal1">Seleccionar</a-->            
+            <button id="btnModal" class="waves-effect waves-light btn modal-trigger" type="reset" href='#modal1' disabled="true">Seleccionar</button>
             <br>
             <button id="btnGuardar" type="submit" disabled="true">Guardar</button>
         </form>        

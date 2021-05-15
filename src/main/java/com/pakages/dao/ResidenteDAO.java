@@ -228,14 +228,14 @@ public class ResidenteDAO extends Conexion{
         }
     }
     //CONSULTAR POR NUMERO DE DOCUMENTO
-    public Residente consultarId(String id) throws SQLException{
+    public int consultarId(String id) throws SQLException{
         
         PreparedStatement ps;
         Connection con;
         con = getConnection();
         con.setAutoCommit(false);
         
-        String sql ="SELECT * FROM residente WHERE numero="+id;        
+        String sql ="SELECT idResidente FROM residente WHERE numero="+id;        
         try{
             ps = con.prepareStatement(sql);
             ResultSet resultSet = ps.executeQuery(sql);
@@ -243,24 +243,16 @@ public class ResidenteDAO extends Conexion{
                 Residente res = new Residente();
                 
                 res.setId(resultSet.getInt(1));
-                res.setNumero(resultSet.getString(2));
-                res.setTipoId(resultSet.getString(3));
-                res.setNombres(resultSet.getString(4));
-                res.setApellidos(resultSet.getString(5));
-                res.setUsuario(resultSet.getString(6));
-                res.setContacto(resultSet.getString(7));
-                res.setActivo(resultSet.getBoolean(8));
-                res.setTitular(resultSet.getInt(9));
                 
-                return res;
+                return res.getId();
             }
             
             //System.out.println("RETURN");
-            return null;
+            return 0;
             
         }catch(SQLException e){
             System.err.println("Error al incertar>>>  "+e);
-            return null;
+            return 0;
         }finally{
             try{
                 con.close();

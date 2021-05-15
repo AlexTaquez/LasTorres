@@ -19,8 +19,8 @@ public class Conexion {
             dataSource.setUrl("jdbc:mysql://us-cdbr-east-03.cleardb.com:3306/heroku_5425e1591239cd3");
             dataSource.setInitialSize(20);
             /*dataSource.setMaxIdle(15);
-            dataSource.setMaxTotal(20);*/
-            dataSource.setMaxWaitMillis(5000);
+            dataSource.setMaxTotal(20);
+            dataSource.setMaxWaitMillis(5000);*/
         }
         return dataSource;
     }

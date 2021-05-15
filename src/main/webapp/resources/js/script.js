@@ -13,29 +13,30 @@ document.addEventListener('DOMContentLoaded', function() {
 function listaApts() {
     
     var id = document.getElementsByName("torre")[0].value;
-   
+    var cadena = "";
     $.ajax({
         url:'http://localhost:8084/Admin/api/form/apt-disp/'+id,
         type: 'GET',
         success: function (data) {
-            $.each(data, function(index,value){
-                console.log(">>>>>>>" + value.id);
+            $.each(data, function(index,value){                
+                var detalles = value.piso+"0"+value.numero+" "+value.descripcion;
+                var idApt = value.id;
+                var argumento = idApt+",'"+detalles+"'";
+                console.log(">>>>>>>" + detalles);
+                //cadena += "<li> <a class='waves-effect' onclick='eleccion("+argumento+")'> "+detalles+"</a> </li>";
+                cadena += '<li> <a class="waves-effect" onclick="eleccion('+argumento+')"> '+detalles+' </a> </li>';
             });
+            document.getElementById("selApts").innerHTML = cadena;
+            document.getElementById("btnModal").disabled = false;
         }
     });
-    
-    var cadena = "";
-    for (var i = 0; i < 9; i++) {
-        cadena += "<li> <a class='waves-effect' onclick='eleccion("+i+")'> APT FOR "+i+" TORRE "+id+" </a> </li>";
-    }
-    
-    document.getElementById("selApts").innerHTML = cadena;
-    
+               
 }
 
-function eleccion(id) {
+function eleccion(id, numero) {
     //var id = document.getElementsByName("selApt")[0].value;
-    document.getElementById("apt").value = id;
+    document.getElementById("apt").value = numero;
+    document.getElementById("aptID").value = id;
     document.getElementById("btnGuardar").disabled = false;
                 
 }
