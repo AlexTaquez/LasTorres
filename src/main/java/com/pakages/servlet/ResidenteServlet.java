@@ -49,7 +49,7 @@ public class ResidenteServlet extends HttpServlet {
 
                 request.setAttribute("fecha", fecha);
 
-                request.getRequestDispatcher("/pages/residentes/crear.jsp").forward(request, response);
+                request.getRequestDispatcher("/Admin/pages/residentes/crear.jsp").forward(request, response);
                 
             }else if(option!=null){
                 //LISTA POR TORRES
@@ -72,7 +72,7 @@ public class ResidenteServlet extends HttpServlet {
                 }
                 request.setAttribute("torre", option);
                 request.setAttribute("lista", lista);
-                request.getRequestDispatcher("/pages/residentes/residentes.jsp").forward(request, response);
+                request.getRequestDispatcher("/Admin/pages/residentes/residentes.jsp").forward(request, response);
                 
             }else if(id!=null){
                 //CONSULTAR

@@ -15,7 +15,7 @@
         <div class="container">
             <h1>Residentes</h1>
 
-            <li><a href="Admin/residente?">Registrar</a></li>
+            <li><a href="/Admin/residente?">Registrar</a></li>
 
             <h3> <% out.print(request.getAttribute("torre")); %>  </h3>
             
@@ -23,7 +23,7 @@
             <li><a href="residente?torre=2">2</a></li>
             <li><a href="residente?torre=3">3</a></li>
             <li><a href="residente?torre=4">4</a></li>
-            <li><a href="residente?torre=4">Inactivos</a></li>
+            <li><a href="residente?torre=0">Inactivos</a></li>
             
         </div>
         <table class="container">
