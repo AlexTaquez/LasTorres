@@ -42,10 +42,10 @@
             <label for="torre">Torre del Apartamento *</label>
             <select id="torre" name="torre" onchange="listaApts()">
                 <option value="0" selected disabled="true">SELECCIONE</option>
-                <option value="4">TORRE 1</option>
-                <option value="14">TORRE 2</option>
-                <option value="24">TORRE 3</option>
-                <option value="34">TORRE 4</option>
+                <option value="35">TORRE 1</option>
+                <option value="36">TORRE 2</option>
+                <option value="37">TORRE 3</option>
+                <option value="38">TORRE 4</option>
             </select>
             <br>
             

@@ -15,7 +15,7 @@ function listaApts() {
     var id = document.getElementsByName("torre")[0].value;
     var cadena = "";
     $.ajax({
-        url:'https://http://localhost:8084/Admin/api/form/apt-disp/'+id,
+        url:'http://localhost:8084/Admin/api/form/apt-disp/'+id,
         type: 'GET',
         success: function (data) {
             $.each(data, function(index,value){                
