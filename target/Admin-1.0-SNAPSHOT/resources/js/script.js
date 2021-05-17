@@ -9,7 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.Modal.init(elems);
   });
   
- 
+/* Script para menu responsive  AG*/
+document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+}); 
 function listaApts() {
     
     var id = document.getElementsByName("torre")[0].value;
