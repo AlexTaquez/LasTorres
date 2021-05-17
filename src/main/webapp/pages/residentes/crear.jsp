@@ -18,7 +18,7 @@
         <form action="/Admin/residente" method="post" class="container">
                       
             <label for="id">N° Identificacion *</label>
-            <input type="number" name="id" id="id" required="true" requiredMessage="Este campo es obligatorio" maxlength="15" min="5"/>
+            <input type="number" name="id" id="id" required="true" requiredMessage="Este campo es obligatorio" maxlength="10" min="5"/>
             
             <label for="tipo">Tipo documento *</label>
             <select id="tipo">

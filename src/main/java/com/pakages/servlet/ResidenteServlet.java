@@ -49,17 +49,17 @@ public class ResidenteServlet extends HttpServlet {
 
                 request.setAttribute("fecha", fecha);
 
-                request.getRequestDispatcher("/Admin/pages/residentes/crear.jsp").forward(request, response);
+                request.getRequestDispatcher("/pages/residentes/crear.jsp").forward(request, response);
                 
             }else if(option!=null){
                 //LISTA POR TORRES
                 List<Residente> lista = null;
                 switch (option) 
                 {
-                    case "1":  torre = 4; break;
-                    case "2":  torre = 14;break;
-                    case "3":  torre = 24;break;
-                    case "4":  torre = 34;break;
+                    case "1":  torre = 35; break;
+                    case "2":  torre = 36;break;
+                    case "3":  torre = 37;break;
+                    case "4":  torre = 38;break;
                     default: torre = 0; break;
                 }
 
@@ -72,13 +72,12 @@ public class ResidenteServlet extends HttpServlet {
                 }
                 request.setAttribute("torre", option);
                 request.setAttribute("lista", lista);
-                request.getRequestDispatcher("/Admin/pages/residentes/residentes.jsp").forward(request, response);
+                request.getRequestDispatcher("/pages/residentes/residentes.jsp").forward(request, response);
                 
             }else if(id!=null){
                 //CONSULTAR
-            }
-            
-            
+                request.getRequestDispatcher("/index.html").forward(request, response);
+            }         
             
         } catch (SQLException ex) {
             Logger.getLogger(ResidenteServlet.class.getName()).log(Level.SEVERE, null, ex);
@@ -99,8 +98,7 @@ public class ResidenteServlet extends HttpServlet {
         } catch (ParseException ex) {
             Logger.getLogger(ResidenteServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+               
        Residente res = new Residente();
        Habitante h = new Habitante();
         
@@ -131,9 +129,8 @@ public class ResidenteServlet extends HttpServlet {
             lista = dao.lista(4);
             request.setAttribute("lista", lista);
             request.setAttribute("torre", "TORRE 1");
-            //request.getRequestDispatcher("/pages/residentes/residentes.jsp").forward(request, response);
-            //request.getRequestDispatcher("/residente?torre=1").forward(request, response);
-            request.getRequestDispatcher("/Admin/residente?torre=1").forward(request, response);
+            request.getRequestDispatcher("/pages/residentes/residentes.jsp").forward(request, response);
+            //request.getRequestDispatcher("/Admin/residente?torre=1").forward(request, response);            
                     
         } catch (SQLException ex) {
             Logger.getLogger(ResidenteServlet.class.getName()).log(Level.SEVERE, null, ex);
