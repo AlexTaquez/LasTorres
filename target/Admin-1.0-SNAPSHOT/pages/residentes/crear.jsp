@@ -14,9 +14,8 @@
        
         <h1>Nuevo Residente</h1>
         <p> <% out.print(request.getAttribute("fecha")); %>  </p>
-        <p> <% out.print(request.getAttribute("fecha2")); %>  </p>
         
-        <form action="/residente" method="post" class="container">
+        <form action="/Admin/residente" method="post" class="container">
                       
             <label for="id">N° Identificacion *</label>
             <input type="number" name="id" id="id" required="true" requiredMessage="Este campo es obligatorio" maxlength="15" min="5"/>

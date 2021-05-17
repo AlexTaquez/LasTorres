@@ -15,7 +15,7 @@
         <div class="container">
             <h1>Residentes</h1>
 
-            <li><a href="pages/residentes/crear.jsp">Registrar</a></li>
+            <li><a href="Admin/residente?">Registrar</a></li>
 
             <h3> <% out.print(request.getAttribute("torre")); %>  </h3>
             

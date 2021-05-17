@@ -132,7 +132,8 @@ public class ResidenteServlet extends HttpServlet {
             request.setAttribute("lista", lista);
             request.setAttribute("torre", "TORRE 1");
             //request.getRequestDispatcher("/pages/residentes/residentes.jsp").forward(request, response);
-            request.getRequestDispatcher("/residente?torre=1").forward(request, response);
+            //request.getRequestDispatcher("/residente?torre=1").forward(request, response);
+            request.getRequestDispatcher("/Admin/residente?torre=1").forward(request, response);
                     
         } catch (SQLException ex) {
             Logger.getLogger(ResidenteServlet.class.getName()).log(Level.SEVERE, null, ex);
