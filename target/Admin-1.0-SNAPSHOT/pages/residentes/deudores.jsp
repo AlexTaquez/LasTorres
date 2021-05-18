@@ -11,7 +11,17 @@
     <body>
         <%@include file="../platillas/menubar.html" %>
                 <%@include file="../platillas/menubar.html" %>
-        <h1>Deudores</h1>
+        
+        <main class="container">
+
+           <div class="card #eceff1 blue-grey lighten-5">
+                <div class="card-content">
+                        <h3 style="text-align:center;">Deudores</h3>
+                        
+                        
+                </div>
+           </div>
+        </main>
         
         
         <%@include file="../platillas/footer.html" %>

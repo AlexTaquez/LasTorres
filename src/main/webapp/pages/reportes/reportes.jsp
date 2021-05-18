@@ -10,7 +10,18 @@
     <%@include file="../platillas/head.html" %>
     <body>
         <%@include file="../platillas/menubar.html" %>
-        <h1>Reportes</h1>
+        
+        
+        <main class="container">
+
+           <div class="card #eceff1 blue-grey lighten-5">
+                <div class="card-content">
+                        <h3 style="text-align:center;">Reportes</h3>
+                        
+                        
+                </div>
+           </div>
+        </main>
         
         
         <%@include file="../platillas/footer.html" %>
