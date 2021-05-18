@@ -26,7 +26,7 @@
             <li><a href="residente?torre=0">Inactivos</a></li>
             
         </div>
-        <table class="container">
+        <table class="responsive striped">
             <tr>
                 <td>N° Identificación</td>
                 <td>Tipo</td>

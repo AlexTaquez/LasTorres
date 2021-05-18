@@ -9,24 +9,78 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     </head>
     <body>
-        <div class="container">
+       
 
-            <nav class="#212121 grey darken-4" style="margin-top: 25px">
+            <!-- Barra de navegacion AG -->
+        <div class="navbar-fixed" >
+            <nav class="#212121 grey darken-4">
                 <div class="nav-wrapper">
-                    <!-- a href="HOME.html" class="brand-logo"><img src="img/lastorres.png" style="height: 75px;"></a -->
+                    <a href="HOME.html" class="brand-logo"><img src="/Admin/resources/img/lastorres.png" style="width: 40%;"></a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a href="residente?torre=1">Residentes</a></li>                        
-                        <li><a href="pages/residentes/residentes.jsp">Apartamentos</a></li>
-                        <li><a href="pages/eventos/eventos.jsp">Eventos</a></li>
-                        <li><a href="pages/reportes/reportes.jsp">Reportes</a></li>
-                        <li><a href="pages/residentes/deudores.jsp">Deudores</a></li>
+                        <li><a href="/Admin/residente?torre=1">Residentes</a></li> 
+                        <li><a href="../apartamentos/apartamentos.jsp">Apartamentos</a></li>
+                        <li><a href="../eventos/eventos.jsp">Eventos</a></li>
+                        <li><a href="../reportes/reportes.jsp">Reportes</a></li>
+                        <li><a href="../residentes/deudores.jsp">Deudores</a></li>
                         <li><a href=""><i class="material-icons">power_settings_new</i></a></li>
                     </ul>
                 </div>
-            </nav>           
-                        
+            </nav>      
         </div>
-        <h1>Index</h1>
+
+                <!-- Menu responsive AG-->
+            <ul class="sidenav" id="mobile-demo">
+                    <li><a href="/Admin/residente?torre=1">Residentes</a></li>
+                    <li><a href="../apartamentos/apartamentos.jsp">Apartamentos</a></li>
+                    <li><a href="../eventos/eventos.jsp">Eventos</a></li>
+                    <li><a href="../reportes/reportes.jsp">Reportes</a></li>
+                    <li><a href="../residentes/deudores.jsp">Deudores</a></li>
+                    <li><a href=""><i class="material-icons">power_settings_new</i></a></li>
+            </ul>      
+                
+                 
+                 
+                 <!-- Contenido header AG -->
+                
+                
+                <!-- Contenido Footer AG -->
+                <footer class="page-footer black">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col l6 s12">
+                                <img src="/Admin/resources/img/lastorres.png" style="width: 30%;">
+                                <p class="grey-text text-lighten-4">Un espacio perfecto para vivir !</p>
+                            </div>
+                            <div class="col l4 offset-l2 s12">
+                                 <hr>
+                                <p class="white-text">INFORMACION DE CONTACTO</p>
+
+                                <div class="col s2">
+                                    <i class="material-icons">call</i>
+                                </div>
+                                <p>606 917 345 ENVIAR E-MAIL</p>
+                                <hr>
+                                <p>SERVICIO PERSONALIZADO</p>
+                                <div class="col s2">
+                                    <i class="material-icons">restore</i>
+                                </div>
+                                <p>24 HORAS AL DÍA 365 DÍAS AL AÑO</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="footer-copyright">
+                        <div class="container">
+                            © 2021 Conjunto Residencial LAS TORRES ( Alex taquez - Maira Guzman )
+                        </div>
+                    </div>
+                </footer>
+                        
+
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="/Admin/resources/js/script.js"></script>
     </body>
 </html>
