@@ -31,6 +31,9 @@ public class ResidenteDAO extends Conexion{
         
         try{
             ps = con.prepareStatement(sql);
+            
+            System.out.println(">>>REGISTRAR >>"+residente.getNombres());
+            
             ps.setString(1, residente.getNumero());
             ps.setString(2, residente.getTipoId());
             ps.setString(3, residente.getNombres());
@@ -51,13 +54,13 @@ public class ResidenteDAO extends Conexion{
             return true;
             
         }catch(SQLException e){
-            System.err.println("Error al incertar>>>  "+e);
+            System.err.println("Error al registrar Residente>>>  "+e);
             return false;
         }finally{
             try{
                 con.close();
             }catch(SQLException e){
-                System.err.println("Erros al intentar cerrar>>>"+ e);
+                System.err.println("Erros al intentar cerrar Residente>>>"+ e);
             }
         }
     }
@@ -89,13 +92,13 @@ public class ResidenteDAO extends Conexion{
             return true;
             
         }catch(SQLException e){
-            System.err.println("Error al incertar>>>  "+e);
+            System.err.println("Error al Vincular>>>  "+e);
             return false;
         }finally{
             try{
                 con.close();
             }catch(SQLException e){
-                System.err.println("Erros al intentar cerrar>>>"+ e);
+                System.err.println("Erros al intentar cerrar Vincular>>>"+ e);
             }
         }
     }
@@ -118,13 +121,13 @@ public class ResidenteDAO extends Conexion{
             return true;
             
         }catch(SQLException e){
-            System.err.println("Error al incertar>>>  "+e);
+            System.err.println("Error al incertar ESTADO>>>  "+e);
             return false;
         }finally{
             try{
                 con.close();
             }catch(SQLException e){
-                System.err.println("Erros al intentar cerrar>>>"+ e);
+                System.err.println("Erros al intentar cerrar ESTADO>>>"+ e);
             }
         }
     }
@@ -165,7 +168,7 @@ public class ResidenteDAO extends Conexion{
         return lista;
         
         } catch(SQLException e){
-            System.err.println("Error al incertar>>>  "+e);
+            System.err.println("Error al LISTAR POR ID >>>  "+e);
             return null;
         }finally{
             try{
@@ -209,7 +212,7 @@ public class ResidenteDAO extends Conexion{
         return lista;
         
         } catch(SQLException e){
-            System.err.println("Error al incertar>>>  "+e);
+            System.err.println("Error al LISTAR INACTIVOS>>>  "+e);
             return null;
         }finally{
             try{
@@ -258,7 +261,7 @@ public class ResidenteDAO extends Conexion{
         return lista;
         
         } catch(SQLException e){
-            System.err.println("Error al incertar>>>  "+e);
+            System.err.println("Error al LISTAR TITULARES>>>  "+e);
             return null;
         }finally{
             try{

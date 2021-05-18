@@ -1,15 +1,12 @@
 package com.pakages.servlet;
 
-import com.pakages.dao.ApartamentoDAO;
 import com.pakages.dao.ObtenerFecha;
 import com.pakages.dao.ResidenteDAO;
-import com.pakages.entities.Apartamento;
 import com.pakages.entities.Habitante;
 import com.pakages.entities.Residente;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -33,7 +30,7 @@ public class ResidenteServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //residente?torre=1        
-        String option = request.getParameter("torre");        
+        String option = request.getParameter("torre");   
         String id = request.getParameter("id");
         
         int torre = 0;
@@ -117,18 +114,24 @@ public class ResidenteServlet extends HttpServlet {
         ResidenteDAO dao = new ResidenteDAO();
         
         try {
+            
+            boolean next;                        
+            next = dao.registrar(res);
+            
+            if (next) {
+                
+                res.setId(dao.consultarId(res.getNumero()));
+                h.setIdResidente(res.getId());
+
+                dao.vincular(h);
+                dao.estado(h.getIdApt());
+                
+                request.setAttribute("torre", "REGISTRADO CON EXITO: TORRE 1");
+            }
+            
             List<Residente> lista = null;
-            dao.registrar(res);
-            
-            res.setId(dao.consultarId(res.getNumero()));
-            h.setIdResidente(res.getId());
-            
-            dao.vincular(h);
-            dao.estado(h.getIdApt());
-            
-            lista = dao.lista(4);
+            lista = dao.lista(35);
             request.setAttribute("lista", lista);
-            request.setAttribute("torre", "TORRE 1");
             request.getRequestDispatcher("/pages/residentes/residentes.jsp").forward(request, response);
             //request.getRequestDispatcher("/Admin/residente?torre=1").forward(request, response);            
                     

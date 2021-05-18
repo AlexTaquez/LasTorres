@@ -27,7 +27,7 @@
                     
                         <div class="col s6">
                                 <label for="tipo">Tipo documento *</label>
-                                <select id="tipo">
+                                <select id="tipo" name="tipo">
                                     <option value="CC" selected>CC</option>
                                     <option value="CE">CE</option>
                                     <option value="TI">TI</option>

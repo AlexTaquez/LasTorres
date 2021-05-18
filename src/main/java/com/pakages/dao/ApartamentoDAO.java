@@ -57,7 +57,7 @@ public class ApartamentoDAO extends Conexion {
         con = getConnection();
         con.setAutoCommit(false);
 
-        String sql = "SELECT idTorre, nombre, nPisos, nApt, " +
+        String sql ="SELECT idTorre, nombre, nPisos, nApt, " +
                     "(SELECT COUNT(idApt) FROM apartamento " +
                     "WHERE idTorre=torre.idTorre AND estado = 'O'), " +//OCUPADOS
                     "(SELECT COUNT(idApt) FROM apartamento " +

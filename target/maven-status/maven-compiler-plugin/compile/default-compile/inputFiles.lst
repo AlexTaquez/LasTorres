@@ -10,4 +10,7 @@ C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\j
 C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\servlet\ResidenteServlet.java
 C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\entities\Habitante.java
 C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\dao\ResidenteDAO.java
+C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\services\EventoService.java
+C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\dao\EventoDAO.java
 C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\dao\ObtenerFecha.java
+C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\entities\Evento.java
