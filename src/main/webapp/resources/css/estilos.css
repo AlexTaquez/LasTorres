@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #E0E0E0;
+  }
+
+  main {
+    flex: 1 0 auto;
+    
+}
+
+header{
+    background-image: url("../img/LA\ TORRE.png");
+    height:360px;
+    background-size:  cover;
+    background-repeat: no-repeat;
+
+}

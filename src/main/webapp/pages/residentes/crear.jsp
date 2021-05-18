@@ -98,5 +98,7 @@
             </div>
         </div>
         
+        
+        <%@include file="../platillas/footer.html" %>
     </body>
 </html>

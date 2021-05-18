@@ -12,5 +12,8 @@
         <%@include file="../platillas/menubar.html" %>
                 <%@include file="../platillas/menubar.html" %>
         <h1>Deudores</h1>
+        
+        
+        <%@include file="../platillas/footer.html" %>
     </body>
 </html>

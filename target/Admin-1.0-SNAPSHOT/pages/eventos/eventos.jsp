@@ -11,5 +11,7 @@
     <body>
         <%@include file="../platillas/menubar.html" %>
         <h1>Eventos</h1>
+        
+        <%@include file="../platillas/footer.html" %>
     </body>
 </html>

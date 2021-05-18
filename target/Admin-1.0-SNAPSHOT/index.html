@@ -7,6 +7,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="/Admin/resources/css/estilos.css">
     </head>
     <body>
        
@@ -42,6 +43,61 @@
                  
                  
                  <!-- Contenido header AG -->
+                 
+                 
+                 <header></header>
+
+                 <main class="container">
+                     <div class="row" style="margin-top: 20px;">
+                         <div class="col s12 m4">
+                             <div class="card-panel #eceff1 blue-grey lighten-5" style="margin-top: 20px;">
+                                 <p style="text-align:center;"><i class="material-icons medium" >drive_eta</i></p>
+                                 <p style="Text-align: justify;"><span>Todos los domicilios se deben recibir en la porteria, ninguno puede ingresar al conjunto residencial.
+                                     </span></p> 
+                             </div>
+                         </div>  
+
+                         <div class="col s12 m4">
+                             <div class="card-panel #eceff1 blue-grey lighten-5" style="margin-top: 20px;">
+                                 <p style="text-align:center;"><i class="material-icons medium" >pets</i></p>
+                                 <p style="Text-align: justify;"><span>Los jardines del conjunto solo pueden ser usados para pasear las mascotas  por un tiempo maximo de 20 minutos.
+                                     </span></p> 
+                             </div>
+                         </div>
+                         <div class="col s12 m4">
+                             <div class="card-panel #eceff1 blue-grey lighten-5" style="margin-top: 20px;">
+                                 <p style="text-align:center;"><i class="material-icons medium" >sentiment_neutral</i></p>
+                                 <p style="Text-align: justify;"><span style="Text-align: justify;">Obligatoriamente debe usar el tapabocas si sale de su residencia a hacer mercado o recibir domicilios en porteria.
+                                     </span></p> 
+                             </div>
+                         </div>
+
+
+
+                     </div>
+
+                     <div class="row">
+                         <div class="col s12 m4">
+                             <h3>MISION</h3>
+                             <p style="Text-align: justify;">Conformar un espacio de vivienda organizado y en donde se busca propiciar espacios de comunicación, sana convivencia y en donde reine la armonía, la paz, el respeto y la equidad para todos los propietarios siguiendo los lineamientos establecidos en nuestro reglamento con el fin de lograr un desarrollo humano sostenible.</p>
+                             <h3>VISION</h3>
+                             <p style="Text-align: justify;">Nos proyectamos a ser una copropiedad reconocida por su belleza, armonía con la naturaleza, perfecta convivencia e integración entre sus habitantes con valores y principios orientados a lo que es justo para todos, fortalecidos en la confianza y el trabajo en equipo que fomente los derechos fundamentales de las personas a través de políticas que desarrollen valores de lealtad, responsabilidad, honestidad, constancia, ambiente de convivencia con calor humano, amistad y respeto</p> 
+                         </div>
+                         <div class="col s1"></div>
+                         <div class="col s7" style="margin-top: 100px;">
+                             <div class="row ">
+
+                                 <div class="carousel carousel-slider">
+                                     <a class="carousel-item" href=""><img src="resources/img/img0.PNG" alt=""></a>
+                                     <a class="carousel-item" href=""><img src="resources/img/img1.PNG" alt=""></a>
+                                     <a class="carousel-item" href=""><img src="resources/img/img2.PNG" alt=""></a>
+                                     <a class="carousel-item" href=""><img src="resources/img/img3.PNG" alt=""></a>   
+                                     <a class="carousel-item" href=""><img src="resources/img/img4.PNG" alt=""></a>
+                                 </div> 
+                             </div>
+                         </div>
+                     </div>
+                 </main>
                 
                 
                 <!-- Contenido Footer AG -->
@@ -52,8 +108,16 @@
                                 <img src="/Admin/resources/img/lastorres.png" style="width: 30%;">
                                 <p class="grey-text text-lighten-4">Un espacio perfecto para vivir !</p>
                             </div>
+
                             <div class="col l4 offset-l2 s12">
-                                 <hr>
+                                <hr>
+                                <p class="white-text">ENCUENTRANOS EN</p>
+
+                                <div class="col s2">
+                                    <i class="material-icons">place</i>
+                                </div>
+                                <p>Barrio las Garzas Popayán</p>
+                                <hr>
                                 <p class="white-text">INFORMACION DE CONTACTO</p>
 
                                 <div class="col s2">
@@ -74,6 +138,7 @@
                     <div class="footer-copyright">
                         <div class="container">
                             © 2021 Conjunto Residencial LAS TORRES ( Alex taquez - Maira Guzman )
+
                         </div>
                     </div>
                 </footer>
@@ -82,5 +147,18 @@
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="/Admin/resources/js/script.js"></script>
+        
+        <!-- Scrip para slider-->
+        <script>
+                
+            document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.carousel');
+            var instances = M.Carousel.init(elems,{
+                duration: 500,
+                indicators: true
+
+            });
+            });
+        </script>
     </body>
 </html>

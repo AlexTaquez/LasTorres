@@ -47,6 +47,9 @@
             </tr>
             </c:forEach>
         </table>
+            
+            
+         <%@include file="../platillas/footer.html" %>   
                     
     </body>
 </html>
