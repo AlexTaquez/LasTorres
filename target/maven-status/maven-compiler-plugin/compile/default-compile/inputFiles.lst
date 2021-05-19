@@ -1,16 +1,16 @@
-E:\ING SISTEMAS\LasTorres\src\main\java\com\pakages\entities\Residente.java
-E:\ING SISTEMAS\LasTorres\src\main\java\com\pakages\entities\Torre.java
-E:\ING SISTEMAS\LasTorres\src\main\java\com\pakages\dao\ObtenerFecha.java
-E:\ING SISTEMAS\LasTorres\src\main\java\com\pakages\servlet\ApartamentoServlet.java
-E:\ING SISTEMAS\LasTorres\src\main\java\com\pakages\entities\Habitante.java
-E:\ING SISTEMAS\LasTorres\src\main\java\com\pakages\dao\Conexion.java
-E:\ING SISTEMAS\LasTorres\src\main\java\com\pakages\services\ResidenteService.java
-E:\ING SISTEMAS\LasTorres\src\main\java\com\pakages\dao\EventoDAO.java
-E:\ING SISTEMAS\LasTorres\src\main\java\com\pakages\dao\ApartamentoDAO.java
-E:\ING SISTEMAS\LasTorres\src\main\java\com\pakages\entities\Evento.java
-E:\ING SISTEMAS\LasTorres\src\main\java\com\pakages\servlet\ResidenteServlet.java
-E:\ING SISTEMAS\LasTorres\src\main\java\com\pakages\entities\Apartamento.java
-E:\ING SISTEMAS\LasTorres\src\main\java\com\pakages\services\FormService.java
-E:\ING SISTEMAS\LasTorres\src\main\java\com\pakages\dao\ResidenteDAO.java
-E:\ING SISTEMAS\LasTorres\src\main\java\com\pakages\servlet\EventoServlet.java
-E:\ING SISTEMAS\LasTorres\src\main\java\com\pakages\services\EventoService.java
+C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\entities\Residente.java
+C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\servlet\ApartamentoServlet.java
+C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\entities\Apartamento.java
+C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\services\FormService.java
+C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\services\ResidenteService.java
+C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\entities\Torre.java
+C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\servlet\EventoServlet.java
+C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\dao\ApartamentoDAO.java
+C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\dao\Conexion.java
+C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\servlet\ResidenteServlet.java
+C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\entities\Habitante.java
+C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\dao\ResidenteDAO.java
+C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\services\EventoService.java
+C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\dao\EventoDAO.java
+C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\dao\ObtenerFecha.java
+C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\entities\Evento.java

@@ -69,7 +69,7 @@
                             <div class="row">                   
                                 <div class="col s6">
                                     <label for="torre">Torre del Apartamento *</label>
-                                    <select id="torre" name="torre" onchange="listaApts()">
+                                    <select id="torre" name="torre" onchange="listaDisp()">
                                         <option value="0" selected disabled="true">SELECCIONE</option>
                                         <option value="35">TORRE 1</option>
                                         <option value="36">TORRE 2</option>

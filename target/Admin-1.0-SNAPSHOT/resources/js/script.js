@@ -13,28 +13,26 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems);
-}); 
-function listaApts() {
-    
+});
+
+function listaDisp() {
+    console.log(">>>>>>>");
     var id = document.getElementsByName("torre")[0].value;
     var cadena = "";
     $.ajax({
-        url:'http://localhost:8084/Admin/api/form/apt-disp/'+id,
+        url:'http://localhost:8080/Admin/api/form/apt-disp/'+id,
         type: 'GET',
         success: function (data) {
             $.each(data, function(index,value){                
                 var detalles = value.piso+"0"+value.numero+" "+value.descripcion;
                 var idApt = value.id;
-                var argumento = idApt+",'"+detalles+"'";
-                console.log(">>>>>>>" + detalles);
-                //cadena += "<li> <a class='waves-effect' onclick='eleccion("+argumento+")'> "+detalles+"</a> </li>";
+                var argumento = idApt+",'"+detalles+"'";                
                 cadena += '<li> <a class="waves-effect" onclick="eleccion('+argumento+')"> '+detalles+' </a> </li>';
             });
             document.getElementById("selApts").innerHTML = cadena;
             document.getElementById("btnModal").disabled = false;
         }
-    });
-               
+    });           
 }
 
 function eleccion(id, numero) {
