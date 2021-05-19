@@ -21,12 +21,16 @@
                         <div class="col s6">
                             <label for="estado">Estado del APT: *</label>
                             <select id="estado" name="estado">
-
-                                <option value="null" selected>
-                                <c:if test="${apartamento.estado=='O'}">OCUPADO</c:if>
-                                <c:if test="${apartamento.estado=='D'}">DESOCUPADO</c:if>
-                                <c:if test="${apartamento.estado=='M'}">EN MANTENIMIENTO</c:if>
-                                </option>                                    
+                            <c:if test="${apartamento.estado=='O'}">
+                                <option value="null" selected>OCUPADO</option>
+                            </c:if>
+                            <c:if test="${apartamento.estado=='D'}">
+                                <option value="null" selected>DESOCUPADO</option>
+                            </c:if>
+                            <c:if test="${apartamento.estado=='M'}">
+                                <option value="null" selected>EN MANTENIMIENTO</option>
+                            </c:if>
+                            
                             <c:if test="${apartamento.estado!='O'}">
                                 <option value="O">OCUPADO</option>
                             </c:if>
@@ -42,11 +46,13 @@
 
                     <div class="col s6">
                         <label for="propiedad">Propiedad del: *</label>
-                        <select id="propiedad" name="propiedad">
-                            <option value="null" selected>
-                                <c:if test="${apartamento.propiedad==true}">CONJUNTO</c:if>
-                                <c:if test="${apartamento.propiedad==false}">RESIDENTE</c:if>
-                                </option>
+                        <select id="propiedad" name="propiedad">                            
+                                <c:if test="${apartamento.propiedad==true}">
+                                    <option value="null" selected>CONJUNTO</option>
+                                </c:if>
+                                <c:if test="${apartamento.propiedad==false}">
+                                    <option value="null" selected>RESIDENTE</option>
+                                </c:if>
                             <c:if test="${apartamento.propiedad==true}">
                                 <option value="0">RESIDENTE</option>
                             </c:if>
