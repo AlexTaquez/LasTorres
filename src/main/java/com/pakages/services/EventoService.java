@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 //http://localhost:8100
 @RestController
-@CrossOrigin(origins="*", allowedHeaders = "*", methods= {RequestMethod.GET,RequestMethod.POST} )
+@CrossOrigin(origins="*", allowedHeaders = "*", methods= {RequestMethod.GET,RequestMethod.POST}, allowCredentials = "*" )
 @Path("/even")
 public class EventoService {
    
@@ -41,7 +41,7 @@ public class EventoService {
     }
     
     @GET//EVENTOS VIGENTES
-    @GetMapping("/get")
+    @GetMapping("/list")
     @Consumes({MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_JSON})
     public List<Evento> getEvent() throws SQLException{
@@ -52,6 +52,20 @@ public class EventoService {
         System.out.println("API EVENT GET>>>");
         
         return lista;
+    }
+    
+    @GET//EVENTOS VIGENTES
+    @Path("/get/{id}")
+    @Consumes({MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
+    public Evento getEventById(@PathParam("id") int id) throws SQLException{
+        EventoDAO dao = new EventoDAO();
+        Evento even;
+        even = dao.consultar(id);
+        
+        System.out.println("API EVENT CONSULTA>>>");
+        
+        return even;
     }
     
     
