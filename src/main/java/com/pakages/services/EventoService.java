@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -21,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@CrossOrigin(origins="*", methods= {RequestMethod.GET})
+@CrossOrigin(origins="*", methods= {RequestMethod.GET,RequestMethod.POST})
 @Path("/even")
 public class EventoService {
 
@@ -41,7 +42,22 @@ public class EventoService {
     @Produces({MediaType.APPLICATION_JSON})
     public List<Evento> getEvent() throws SQLException{
         EventoDAO dao = new EventoDAO();
-        List<Evento> lista = dao.lista();
+        List<Evento> lista;
+        lista = dao.listaVigentes();
         return lista;
+    }
+    
+    
+    
+    @POST
+    @Path("/set")
+    @Consumes({MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
+    public boolean setEvent(Evento e) throws SQLException{
+        EventoDAO dao = new EventoDAO();
+        if(dao.registrar(e)){
+            System.out.println("API SET EVENT " + e.getFoto());
+            return true;
+        }else{return false;}        
     }
 }

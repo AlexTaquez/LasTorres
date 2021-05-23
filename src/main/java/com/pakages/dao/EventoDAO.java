@@ -218,4 +218,59 @@ public class EventoDAO extends Conexion {
         }
        
     }
+    
+    
+    public List<Evento> listaVigentes() throws SQLException{
+       List<Evento> lista = new ArrayList<>();
+       
+       PreparedStatement ps;
+       Connection con;       
+       con = getConnection();
+       con.setAutoCommit(false);
+       
+       String sql = "SELECT * FROM evento" +
+                    " WHERE estado='V' ";
+        try {
+            ps = con.prepareStatement(sql);
+       ResultSet resultSet = ps.executeQuery(sql);
+       
+        while (resultSet.next()) {
+                        
+            Evento even = new Evento();
+            
+            even.setId(resultSet.getInt(1));
+            even.setTitulo(resultSet.getString(2));
+            even.setDescripcion(resultSet.getString(3));
+            even.setDetalles(resultSet.getString(4));
+            even.setLugar(resultSet.getString(5));
+            even.setTipo(resultSet.getString(6)); 
+            even.setInicio(resultSet.getDate(7));
+            even.setFin(resultSet.getDate(8));
+            even.setFoto(resultSet.getString(9));
+            even.setEstado(resultSet.getString(10));
+            even.setResidente(resultSet.getInt(11));
+            
+            lista.add(even);
+        }
+       
+        return lista;
+        
+        } catch(SQLException e){
+            System.err.println("Error al incertar>>>  "+e);
+            return null;
+        }finally{
+            try{
+                con.close();
+            }catch(SQLException e){
+                System.err.println("Erros al intentar cerrar>>>"+ e);
+            }
+        }
+       
+    }
+    
+    
+    private void cambiaEstado(){
+    
+    
+    }
 }

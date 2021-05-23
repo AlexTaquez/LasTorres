@@ -23,7 +23,9 @@ $(document).ready(function(){
 });
 /* Script para TIME  */
 $(document).ready(function(){
-    $('.timepicker').timepicker();
+    $('.timepicker').timepicker({
+        format:"HH:mm:ss"
+    });
 });
 
 function listaDisp() {
