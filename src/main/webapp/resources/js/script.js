@@ -23,9 +23,7 @@ $(document).ready(function(){
 });
 /* Script para TIME  */
 $(document).ready(function(){
-    $('.timepicker').timepicker({
-        format:"HH:mm:ss"
-    });
+    $('.timepicker').timepicker();
 });
 
 function listaDisp() {
@@ -54,4 +52,13 @@ function eleccion(id, numero) {
     document.getElementById("aptID").value = id;
     document.getElementById("btnGuardar").disabled = false;
                 
+}
+
+
+function test() {
+    //var id = document.getElementsByName("selApt")[0].value;
+    var t = document.getElementById("titulo").value;
+    var d = document.getElementById("detalles").value;
+    
+    console.log("T>>> "+t+" d>> "+d);      
 }

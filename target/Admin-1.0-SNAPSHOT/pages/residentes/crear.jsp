@@ -22,7 +22,7 @@
                 <div class="card-content">
                         <h3 style="text-align:center;">Nuevo Residente</h3>
                         <br>
-                        <form action="/Admin/residente" method="post"  class="col s12" style="margin-top: 15px;">
+                        <form action="/Admin/residente" method="post"  class="col s12" accept-charset="UTF-8" style="margin-top: 15px;">
 
                             <div class="row">                   
                                 <div class="col s6">

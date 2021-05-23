@@ -15,7 +15,7 @@
                 <div class="card-content">
                         <h3 style="text-align:center;">Nuevo Evento</h3>
                         <br>
-                        <form action="/Admin/evento" method="post"  class="col s12" style="margin-top: 15px;" enctype="multipart/form-data">
+                        <form action="/Admin/evento" method="post" accept-charset="UTF-8" class="col s12" style="margin-top: 15px;" enctype="multipart/form-data">
 
                             <div class="row">                   
                                 <div class="col s6">
@@ -83,12 +83,11 @@
 
                             <button id="btnGuardar" class="waves-effect waves-light btn" type="submit">Guardar</button>
                         </form>
-
+                     
                 </div>
             </div>
           
         </main> 
-        
         
         <%@include file="../platillas/footer.html" %>
     </body>
