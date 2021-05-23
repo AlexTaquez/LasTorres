@@ -1,5 +1,4 @@
 <%-- 
-    Document   : residentes
     Created on : 5/05/2021, 04:48:21 PM
     Author     : Usuario
 <% request.getAttribute("lista"); %>
@@ -54,11 +53,9 @@
                                     <td> <c:out value="${lista.usuario}"></c:out> </td>
                                     <td> <c:out value="${lista.contacto}"></c:out> </td>     
 
-                                        <td> 
+                                    <td> 
                                         <c:if test="${lista.titular==0}">SI</c:if>
-                                        <c:if test="${lista.titular==1}">
-                                            <c:out value="${lista.contacto}"></c:out>
-                                        </c:if>
+                                        <c:if test="${lista.titular==1}"><c:out value="${lista.contacto}"></c:out></c:if>
                                     </td>
                                 </tr>
                             </c:forEach>

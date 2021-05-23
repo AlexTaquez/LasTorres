@@ -25,16 +25,16 @@ import java.util.Date;
 @WebServlet(name = "residente", urlPatterns = {"/residente"})
 public class ResidenteServlet extends HttpServlet {
 
-
+    ResidenteDAO dao = new ResidenteDAO();
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //residente?torre=1        
-        String option = request.getParameter("torre");   
+        String option = request.getParameter("torre");
         String id = request.getParameter("id");
         
-        int torre = 0;
-        ResidenteDAO dao = new ResidenteDAO();
+        int torre = 0;        
         //List<Residente> lista = null;
         try {
             
@@ -47,9 +47,10 @@ public class ResidenteServlet extends HttpServlet {
                 request.setAttribute("fecha", fecha);
 
                 request.getRequestDispatcher("/pages/residentes/crear.jsp").forward(request, response);
-                
+
             }else if(option!=null){
                 //LISTA POR TORRES
+                //ResidenteDAO dao = new ResidenteDAO();
                 List<Residente> lista = null;
                 switch (option) 
                 {
@@ -70,7 +71,7 @@ public class ResidenteServlet extends HttpServlet {
                 request.setAttribute("torre", option);
                 request.setAttribute("lista", lista);
                 request.getRequestDispatcher("/pages/residentes/residentes.jsp").forward(request, response);
-                
+
             }else if(id!=null){
                 //CONSULTAR
                 request.getRequestDispatcher("/index.html").forward(request, response);
@@ -90,32 +91,35 @@ public class ResidenteServlet extends HttpServlet {
         ObtenerFecha objFecha=new ObtenerFecha();
         SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String fecha = formato.format(objFecha.getNTPDate());
-        try {
-            fecha2 = formato.parse(fecha);
-        } catch (ParseException ex) {
-            Logger.getLogger(ResidenteServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
-               
+        //2021-05-22 14:40:12
        Residente res = new Residente();
        Habitante h = new Habitante();
         
+        try {
+            fecha2 = formato.parse(fecha);
+            //Sat May 22 14:40:12 CDT 2021
+        } catch (ParseException ex) {
+            System.out.println("ERROR AL OBTENER LA FECHA");
+            Logger.getLogger(ResidenteServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+               
+       
+        
         res.setNumero(request.getParameter("id"));
         res.setTipoId(request.getParameter("tipo"));
-        res.setNombres(request.getParameter("nombres"));
-        res.setApellidos(request.getParameter("apellidos"));
+        res.setNombres(request.getParameter("nombres").toUpperCase());
+        res.setApellidos(request.getParameter("apellidos").toUpperCase());
         res.setUsuario(request.getParameter("usuario"));
         res.setContacto(request.getParameter("contacto"));
         res.setActivo(true);
-        res.setTitular(0);
+        res.setTitular(0);      
                 
-        h.setIdApt(Integer. parseInt (request.getParameter("aptID")));
-        h.setInicio(fecha2);
-        
-        ResidenteDAO dao = new ResidenteDAO();
-        
         try {
+            //ResidenteDAO dao = new ResidenteDAO();
+            boolean next;
+            h.setIdApt(Integer. parseInt (request.getParameter("aptID")));
+            h.setInicio(fecha2);
             
-            boolean next;                        
             next = dao.registrar(res);
             
             if (next) {
@@ -131,6 +135,8 @@ public class ResidenteServlet extends HttpServlet {
             
             List<Residente> lista = null;
             lista = dao.lista(35);
+            String option = "TORRE 1";//id 35
+            request.setAttribute("torre", option);
             request.setAttribute("lista", lista);
             request.getRequestDispatcher("/pages/residentes/residentes.jsp").forward(request, response);
             //request.getRequestDispatcher("/Admin/residente?torre=1").forward(request, response);            

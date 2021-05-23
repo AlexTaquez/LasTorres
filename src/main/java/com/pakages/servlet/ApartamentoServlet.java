@@ -83,7 +83,40 @@ public class ApartamentoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        try {
+            boolean propiedad=true;
+            if(request.getParameter("propiedad").equals('0')){propiedad=false;}
+
+
+            Apartamento apt = new Apartamento();
+
+            apt.setId(Integer.parseInt(request.getParameter("id")));
+            apt.setPropiedad(propiedad);
+            apt.setEstado(request.getParameter("estado"));
+            apt.setArriendo(Double.parseDouble(request.getParameter("arriendo")));
+            apt.setDescripcion(request.getParameter("descripcion"));
+        
+        
+            ApartamentoDAO dao = new ApartamentoDAO();
+            String option = "Lista de Torres";
+            if (dao.actualizar(apt)){                
+                option = "Actualización exitosa";
+            }else{
+                option = "No se pudo completar la actualización";
+            }
+            
+            
+            List<Torre> lista = null;
+            lista = dao.listaTorres();
+            request.setAttribute("torre", option);
+            request.setAttribute("lista", lista);
+            request.getRequestDispatcher("/pages/apartamentos/torres.jsp").forward(request, response);
+            
+        } catch (SQLException ex) {
+            request.getRequestDispatcher("/Admin").forward(request, response);
+            Logger.getLogger(ResidenteServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
-
-
 }

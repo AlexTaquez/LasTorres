@@ -15,10 +15,10 @@
 
                         <h3> <% out.print(request.getAttribute("torre"));%>  </h3>
 
-                    <li><a href="residente?torre=1">1</a></li>
-                    <li><a href="residente?torre=2">2</a></li>
-                    <li><a href="residente?torre=3">3</a></li>
-                    <li><a href="residente?torre=4">4</a></li>
+                    <li><a href="apt?torre=1">1</a></li>
+                    <li><a href="apt?torre=2">2</a></li>
+                    <li><a href="apt?torre=3">3</a></li>
+                    <li><a href="apt?torre=4">4</a></li>
 
 
                     <table class="highlight responsive-table  #cfd8dc blue-grey lighten-4">

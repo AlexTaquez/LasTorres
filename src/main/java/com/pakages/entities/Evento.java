@@ -8,7 +8,7 @@ import java.util.List;
  * @author Usuario
  */
 public class Evento {
-    private String titulo, descripcion, detalles, lugar, tipo, estado, foto;
+    private String titulo, descripcion, detalles, lugar, tipo, estado, foto, usuario;
     private int id, residente;
     private Date inicio;//
     private Date fin;
@@ -108,6 +108,14 @@ public class Evento {
 
     public void setFoto(String foto) {
         this.foto = foto;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
     
     

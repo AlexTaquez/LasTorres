@@ -15,6 +15,17 @@ document.addEventListener('DOMContentLoaded', function () {
     var instances = M.Sidenav.init(elems);
 });
 
+/* Script para FECHAS  */
+$(document).ready(function(){
+    $('.datepicker').datepicker({
+        format:'yyyy-mm-dd'
+    });
+});
+/* Script para TIME  */
+$(document).ready(function(){
+    $('.timepicker').timepicker();
+});
+
 function listaDisp() {
     console.log(">>>>>>>");
     var id = document.getElementsByName("torre")[0].value;

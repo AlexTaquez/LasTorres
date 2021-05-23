@@ -14,9 +14,7 @@
        
         <p> <% out.print(request.getAttribute("fecha")); %>  </p>
         
-        <!-- Diseño formulario AG -->
-        
-        
+        <!-- Diseño formulario AG -->        
          
          <main class="container">
 
