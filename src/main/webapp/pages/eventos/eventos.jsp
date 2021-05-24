@@ -16,19 +16,19 @@
             <div class="card #eceff1 blue-grey lighten-5 ">
                 <div class="card-content">
 
-                    <div class="container">
-                        <h1>Eventos</h1>
-
-                        <li><a href="evento?">Nuevo Evento</a></li>
-
-                        <h3> <% out.print(request.getAttribute("tipo"));%>  </h3>
-                        <ul>
-                            <li><a href="evento?tipo=1">Administracion</a></li>
-                            <li><a href="evento?tipo=2">Residencial</a></li>
+                    
+                        <h1 style="text-align:center;">Eventos</h1>
+                        
+                        <ul id="dropdown2" class="dropdown-content" >
+                                <li><a href="evento?tipo=1">Administracion</a></li>
+                                <li><a href="evento?tipo=2">Residencial</a></li>
                         </ul>
+                        <a class="btn dropdown-trigger" href="#!" data-target="dropdown2"><% out.print(request.getAttribute("tipo"));%><i class="material-icons right">arrow_drop_down</i></a>
+                        <a href="evento?"class="waves-effect waves-light btn">Nuevo Evento</a>
 
-                    </div>
-                    <table class="highlight responsive-table  #cfd8dc blue-grey lighten-4">
+            
+                    
+                    <table class="highlight responsive-table  #cfd8dc blue-grey lighten-4"  style="margin-top: 15px;">
                         <thead>
                             <tr>
                                 <td>Foto</td>

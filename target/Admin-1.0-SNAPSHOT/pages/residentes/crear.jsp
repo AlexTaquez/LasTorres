@@ -89,7 +89,7 @@
 
 
 
-                            <button id="btnGuardar" class="waves-effect waves-light btn" type="submit" disabled="true">Guardar</button>
+                            <button id="btnGuardar" class="waves-effect waves-light btn " type="submit" disabled="true">Guardar</button>
                         </form>
                         
                     

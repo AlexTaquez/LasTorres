@@ -50,10 +50,21 @@
                                         <option value="C">COMERCIAL</option>
                                     </select>
                                 </div>
-
+                                
+                                <!--   
                                 <div class="col s6">
                                     <label for="foto">Foto</label>
                                     <input type="file" name="foto" id="foto"/>
+                                </div>
+                                -->
+                                <div class="file-field input-field col s6">
+                                        <div class="btn">
+                                                <span>Foto</span>
+                                                <input type="file" name="foto" id="foto"/>
+                                        </div>
+                                        <div class="file-path-wrapper">
+                                                <input class="file-path validate" type="text">
+                                        </div>
                                 </div>
                             </div>
 
