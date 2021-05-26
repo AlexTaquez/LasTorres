@@ -2,13 +2,10 @@ package com.pakages.dao;
 
 import com.pakages.entities.Evento;
 import java.sql.Connection;
-//import java.sql.Date;
-//import java.util.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,14 +23,10 @@ public class EventoDAO extends Conexion {
         String fin = null;
         String inicio = null;
         try{
-            SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            
+            inicio = even.getInicio();
             if(even.getFin()!=null){
-                fin = formato.format(even.getFin());
-            }
-            
-            inicio = formato.format(even.getInicio());
-
+                fin = even.getFin();
+            }    
             
             System.out.println("FECHA DESDE DAO>>>"+ inicio);
             
@@ -58,7 +51,7 @@ public class EventoDAO extends Conexion {
             return true;
             
         }catch(SQLException e){
-            System.err.println("Error al incertar>>>  "+e);
+            System.err.println("Error al incertar evento>>>  "+e);
             return false;
         }finally{
             try{
@@ -94,8 +87,8 @@ public class EventoDAO extends Conexion {
             even.setDetalles(resultSet.getString(4));
             even.setLugar(resultSet.getString(5));
             even.setTipo(resultSet.getString(6)); 
-            even.setInicio(resultSet.getDate(7));
-            even.setFin(resultSet.getDate(8));
+            even.setInicio(resultSet.getString(7));
+            even.setFin(resultSet.getString(8));
             even.setFoto(resultSet.getString(9));
             even.setEstado(resultSet.getString(10));
             even.setResidente(resultSet.getInt(11));
@@ -106,7 +99,7 @@ public class EventoDAO extends Conexion {
         return lista;
         
         } catch(SQLException e){
-            System.err.println("Error al incertar>>>  "+e);
+            System.err.println("Error al listar>>>  "+e);
             return null;
         }finally{
             try{
@@ -143,8 +136,8 @@ public class EventoDAO extends Conexion {
             even.setDetalles(resultSet.getString(4));
             even.setLugar(resultSet.getString(5));
             even.setTipo(resultSet.getString(6)); 
-            even.setInicio(resultSet.getDate(7));
-            even.setFin(resultSet.getDate(8));
+            even.setInicio(resultSet.getString(7));
+            even.setFin(resultSet.getString(8));
             even.setFoto(resultSet.getString(9));
             even.setEstado(resultSet.getString(10));
             even.setResidente(resultSet.getInt(11));
@@ -155,7 +148,7 @@ public class EventoDAO extends Conexion {
         return lista;
         
         } catch(SQLException e){
-            System.err.println("Error al incertar>>>  "+e);
+            System.err.println("Error al listar>>>  "+e);
             return null;
         }finally{
             try{
@@ -184,9 +177,7 @@ public class EventoDAO extends Conexion {
             ResultSet resultSet = ps.executeQuery(sql);
        
         while (resultSet.next()) {
-            
-            System.out.println("DESDE DAO>>F1>>>>"+resultSet.getDate(7));
-            
+                        
             Evento even = new Evento();
             
             even.setId(resultSet.getInt(1));
@@ -195,8 +186,8 @@ public class EventoDAO extends Conexion {
             even.setDetalles(resultSet.getString(4));
             even.setLugar(resultSet.getString(5));
             even.setTipo(resultSet.getString(6)); 
-            even.setInicio(resultSet.getDate(7));//FECHA
-            even.setFin(resultSet.getDate(8));
+            even.setInicio(resultSet.getString(7));//FECHA
+            even.setFin(resultSet.getString(8));
             even.setFoto(resultSet.getString(9));
             even.setEstado(resultSet.getString(10));
             even.setResidente(resultSet.getInt(11));
@@ -207,7 +198,7 @@ public class EventoDAO extends Conexion {
         return lista;
         
         } catch(SQLException e){
-            System.err.println("Error al incertar>>>  "+e);
+            System.err.println("Error al listar>>>  "+e);
             return null;
         }finally{
             try{
@@ -244,8 +235,8 @@ public class EventoDAO extends Conexion {
             even.setDetalles(resultSet.getString(4));
             even.setLugar(resultSet.getString(5));
             even.setTipo(resultSet.getString(6)); 
-            even.setInicio(resultSet.getDate(7));
-            even.setFin(resultSet.getDate(8));
+            even.setInicio(resultSet.getString(7));
+            even.setFin(resultSet.getString(8));
             even.setFoto(resultSet.getString(9));
             even.setEstado(resultSet.getString(10));
             even.setResidente(resultSet.getInt(11));
@@ -256,7 +247,7 @@ public class EventoDAO extends Conexion {
         return lista;
         
         } catch(SQLException e){
-            System.err.println("Error al incertar>>>  "+e);
+            System.err.println("Error al listar>>>  "+e);
             return null;
         }finally{
             try{
@@ -289,8 +280,8 @@ public class EventoDAO extends Conexion {
                 even.setDetalles(resultSet.getString(4));
                 even.setLugar(resultSet.getString(5));
                 even.setTipo(resultSet.getString(6));
-                even.setInicio(resultSet.getDate(7));
-                even.setFin(resultSet.getDate(8));
+                even.setInicio(resultSet.getString(7));
+                even.setFin(resultSet.getString(8));
                 even.setFoto(resultSet.getString(9));
                 even.setEstado(resultSet.getString(10));
                 even.setResidente(resultSet.getInt(11));
@@ -301,7 +292,7 @@ public class EventoDAO extends Conexion {
             return null;
             
         }catch(SQLException e){
-            System.err.println("Error al incertar>>>  "+e);
+            System.err.println("Error al listar>>>  "+e);
             return null;
         }finally{
             try{

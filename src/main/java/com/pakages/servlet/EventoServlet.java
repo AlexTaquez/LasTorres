@@ -10,8 +10,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -75,52 +73,40 @@ public class EventoServlet extends HttpServlet {
             throws ServletException, IOException {
         
         Evento even = new Evento();
-        String f1, f2;
-        Date inicio = null;
-        Date fin = null;
-        
+        String f1, f2 ,h2 = null;      
         
         f1= request.getParameter("inicio")+" "+request.getParameter("h1");
         f2= request.getParameter("fin");
         
-        System.out.println("Titulo ñ Ñ>> " + request.getParameter("titulo").toUpperCase());
-        
-        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        try {
-            inicio = formato.parse(f1);
-            System.out.println(">>>F2 "+ f2 );
-            if(f2!=null){
-                f2 += " "+request.getParameter("h2");
-                fin = formato.parse(f2);
-                System.out.println(">>>F2 NOT NULL "+ f2 +">>FORMAT " + fin);
-            }else{fin=null;}
-            
-        } catch (ParseException ex) {
-            
-            System.out.println("ERROR EN LAS FECHAS DEL EVENTO");
-            request.getRequestDispatcher("/").forward(request, response);
-            Logger.getLogger(EventoServlet.class.getName()).log(Level.SEVERE, null, ex);
-            return;
-        }
-        
+        System.out.println("Titulo ñ Ñ>> " + request.getParameter("titulo").toUpperCase());                    
         
         try{//------------- GUARDAR FOTO
             String photo = "";
             Part part = request.getPart("foto");
-            System.out.println(">>>>PART>>>"+part);
+            System.out.println(">>>>PART FOTO>>>"+part);
             
             if(isExtencion(part.getSubmittedFileName(), extens)){
                 photo = saveFile(part, uploads);
                 
             }else {photo = "adminEvent.jpg";}
             
+            //---FECHAS
+            
+            if (f2!=null){
+                h2 = request.getParameter("h2");
+                if(h2==null){
+                    h2="12:00 PM";
+                }
+                f2 += " "+h2;
+            }
+            
             even.setTitulo(request.getParameter("titulo").toUpperCase());
             even.setDescripcion(request.getParameter("descripcion"));
             even.setDetalles(request.getParameter("detalles"));
             even.setLugar(request.getParameter("lugar").toUpperCase());
             even.setTipo(request.getParameter("tipo"));
-            even.setInicio(inicio);
-            even.setFin(fin);
+            even.setInicio(f1);
+            even.setFin(f2);
             even.setFoto(photo);
             even.setEstado("V");
             even.setResidente(5);
@@ -142,9 +128,7 @@ public class EventoServlet extends HttpServlet {
 
         } catch (ParseException ex) {
             Logger.getLogger(EventoServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
+        }    
     }
     
     
@@ -171,8 +155,7 @@ public class EventoServlet extends HttpServlet {
               }
               
         }catch(Exception e){
-            System.out.println("ERROR SAVE FILE>>>");
-            e.printStackTrace();
+            System.out.println("ERROR SAVE FILE>>>" + e);
         }
         
         return patchAbsolute;

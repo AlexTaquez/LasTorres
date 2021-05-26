@@ -318,9 +318,8 @@ public class ResidenteDAO extends Conexion{
         try{
             ps = con.prepareStatement(sql);
             ResultSet resultSet = ps.executeQuery(sql);
-            if (resultSet.next()) {
-                Residente res = new Residente();
-                
+            Residente res = new Residente();
+            if (resultSet.next()) {                               
                 res.setId(resultSet.getInt(1));
                 res.setNumero(resultSet.getString(2));
                 res.setTipoId(resultSet.getString(3));
@@ -331,11 +330,9 @@ public class ResidenteDAO extends Conexion{
                 res.setActivo(resultSet.getBoolean(8));
                 res.setTitular(resultSet.getInt(9));
                 
-                return res;
             }
             
-            //System.out.println("RETURN");
-            return null;
+            return res;
             
         }catch(SQLException e){
             System.err.println("Error al incertar>>>  "+e);

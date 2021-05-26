@@ -32,7 +32,7 @@
                             <div class="row">
                                 <div class="col s6">
                                     <label for="detalles">Detalles *</label>
-                                    <input type="text" name="detalles" id="detalles" required="true" maxlength="100" />
+                                    <input type="text" name="detalles" id="detalles" required="true" maxlength="1000" />
                                 </div>
 
                                 <div class="col s6">
@@ -63,7 +63,7 @@
                                                 <input type="file" name="foto" id="foto"/>
                                         </div>
                                         <div class="file-path-wrapper">
-                                                <input class="file-path validate" type="text">
+                                            <input class="file-path validate" type="text" name="nameFile">
                                         </div>
                                 </div>
                             </div>

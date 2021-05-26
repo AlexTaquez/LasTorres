@@ -8,10 +8,8 @@ import java.util.List;
  * @author Usuario
  */
 public class Evento {
-    private String titulo, descripcion, detalles, lugar, tipo, estado, foto, usuario;
+    private String titulo, descripcion, detalles, lugar, tipo, estado, foto, usuario, inicio, fin;
     private int id, residente;
-    private Date inicio;//
-    private Date fin;
     List<String> fotos;
 
     public String getTitulo() {
@@ -78,22 +76,6 @@ public class Evento {
         this.residente = residente;
     }
 
-    public Date getInicio() {
-        return inicio;
-    }
-
-    public void setInicio(Date inicio) {
-        this.inicio = inicio;
-    }
-
-    public Date getFin() {
-        return fin;
-    }
-
-    public void setFin(Date fin) {
-        this.fin = fin;
-    }
-
     public List<String> getFotos() {
         return fotos;
     }
@@ -117,7 +99,21 @@ public class Evento {
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
-    
-    
-    
+
+    public String getInicio() {
+        return inicio;
+    }
+
+    public void setInicio(String inicio) {
+        this.inicio = inicio;
+    }
+
+    public String getFin() {
+        return fin;
+    }
+
+    public void setFin(String fin) {
+        this.fin = fin;
+    }
+
 }

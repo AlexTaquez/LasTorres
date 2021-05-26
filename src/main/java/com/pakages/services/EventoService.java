@@ -54,7 +54,7 @@ public class EventoService {
         return lista;
     }
     
-    @GET//EVENTOS VIGENTES
+    @GET//CONSULTAR EVENTO POR IDE DE EVENTO
     @Path("/get/{id}")
     @Consumes({MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_JSON})
@@ -63,7 +63,7 @@ public class EventoService {
         Evento even;
         even = dao.consultar(id);
         
-        System.out.println("API EVENT CONSULTA>>>");
+        System.out.println("API EVENT CONSULTA>>> "+id);
         
         return even;
     }
