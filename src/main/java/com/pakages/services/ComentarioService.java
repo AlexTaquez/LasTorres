@@ -52,6 +52,7 @@ public class ComentarioService {
     @Produces({MediaType.APPLICATION_JSON})
     public boolean setEvent(Comentario com) throws SQLException{
         ComentarioDAO dao = new ComentarioDAO();
+        System.out.println("POST COMENT "+com.getMensaje());
         if(dao.registrar(com)){
             System.out.println("SERVICE COMENT TRUE ");
             return true;
