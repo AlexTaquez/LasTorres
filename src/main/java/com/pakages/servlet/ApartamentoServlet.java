@@ -68,7 +68,7 @@ public class ApartamentoServlet extends HttpServlet {
                 Apartamento objeto = new Apartamento();
                 objeto = dao.consultar(idApt);
                 
-                option = "Actualizar "+ objeto.getPiso() + "0" +objeto.getNumero() ;
+                option = "APARTAMENTO "+ objeto.getPiso() + "0" +objeto.getNumero() ;
                 request.setAttribute("opcion", option);
                 request.setAttribute("apartamento", objeto);
                 request.getRequestDispatcher("/pages/apartamentos/editar.jsp").forward(request, response);

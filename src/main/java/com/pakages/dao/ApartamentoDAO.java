@@ -221,6 +221,7 @@ public class ApartamentoDAO extends Conexion {
                 apt.setArriendo(resultSet.getDouble(5));
                 apt.setEstado(resultSet.getString(6));
                 apt.setDescripcion(resultSet.getString(7));
+                apt.setTorre(resultSet.getInt(8));
                 
                 con.commit();
                 ps.close();

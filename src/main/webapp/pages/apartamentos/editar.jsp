@@ -16,7 +16,7 @@
             
                 <div class=" card #eceff1 blue-grey lighten-5" >
                         <div class="card-content">
-                        <h1  style="text-align:center;"><c:out value="${opcion}"></c:out></h1>
+                        <h2 style="text-align:center;"><c:out value="${opcion}"></c:out></h2>
 
                             <div class="row  ">
                                 <form action="/Admin/apt" method="post"  class="col s12" style="margin-top: 15px;">
@@ -32,16 +32,16 @@
                                     <div class="col s6">
                                         <label for="torre">Torre</label>
                                         <c:if test="${apartamento.torre==35}">
-                                            <input type="text" name="torre" id="torre" value="1" disabled/>
+                                            <input type="text" name="torre" id="torre" value="TORRE 1" disabled/>
                                         </c:if>
                                         <c:if test="${apartamento.torre==36}">
-                                            <input type="text" name="torre" id="torre" value="2" disabled/>
+                                            <input type="text" name="torre" id="torre" value="TORRE 2" disabled/>
                                         </c:if>
                                         <c:if test="${apartamento.torre==37}">
-                                            <input type="text" name="torre" id="torre" value="3" disabled/>
+                                            <input type="text" name="torre" id="torre" value="TORRE 3" disabled/>
                                         </c:if>
                                         <c:if test="${apartamento.torre==38}">
-                                            <input type="text" name="torre" id="torre" value="4" disabled/>
+                                            <input type="text" name="torre" id="torre" value="TORRE 4" disabled/>
                                         </c:if>
                                     </div>
                                 </div>
@@ -105,7 +105,7 @@
                                     </div>
                                 </div>
 
-                                <button id="btnGuardar" class="waves-effect waves-light btn" type="submit" disabled="true">Guardar</button>
+                                <button id="btnGuardar" class="waves-effect waves-light btn" type="submit">Guardar</button>
                             </form>
                         </div>
                         </div>
