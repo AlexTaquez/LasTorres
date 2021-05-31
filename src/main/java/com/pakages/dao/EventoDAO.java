@@ -95,7 +95,8 @@ public class EventoDAO extends Conexion {
             
             lista.add(even);
         }
-       
+        con.commit();
+        ps.close();
         return lista;
         
         } catch(SQLException e){
@@ -144,7 +145,8 @@ public class EventoDAO extends Conexion {
             
             lista.add(even);
         }
-       
+        con.commit();
+        ps.close();
         return lista;
         
         } catch(SQLException e){
@@ -194,7 +196,8 @@ public class EventoDAO extends Conexion {
             
             lista.add(even);
         }
-        System.out.println("RETURN LISTA DESDE DAO>>>");
+        con.commit();
+        ps.close();
         return lista;
         
         } catch(SQLException e){
@@ -243,7 +246,8 @@ public class EventoDAO extends Conexion {
             
             lista.add(even);
         }
-       
+        con.commit();
+        ps.close();
         return lista;
         
         } catch(SQLException e){
@@ -287,8 +291,8 @@ public class EventoDAO extends Conexion {
                 even.setResidente(resultSet.getInt(11));
                 return even;
             }
-            
-            //System.out.println("RETURN");
+            con.commit();
+            ps.close();
             return null;
             
         }catch(SQLException e){

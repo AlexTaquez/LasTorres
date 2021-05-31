@@ -165,6 +165,8 @@ public class ResidenteDAO extends Conexion{
             lista.add(res);
         }
        
+        con.commit();
+        ps.close();
         return lista;
         
         } catch(SQLException e){
@@ -208,7 +210,8 @@ public class ResidenteDAO extends Conexion{
             
             lista.add(res);
         }
-       
+        con.commit();
+        ps.close();
         return lista;
         
         } catch(SQLException e){
@@ -258,6 +261,8 @@ public class ResidenteDAO extends Conexion{
             lista.add(res);
         }
        
+        con.commit();
+        ps.close();
         return lista;
         
         } catch(SQLException e){
@@ -291,7 +296,8 @@ public class ResidenteDAO extends Conexion{
                 return res.getId();
             }
             
-            //System.out.println("RETURN");
+            con.commit();
+            ps.close();
             return 0;
             
         }catch(SQLException e){
@@ -331,7 +337,8 @@ public class ResidenteDAO extends Conexion{
                 res.setTitular(resultSet.getInt(9));
                 
             }
-            
+            con.commit();
+            ps.close();
             return res;
             
         }catch(SQLException e){

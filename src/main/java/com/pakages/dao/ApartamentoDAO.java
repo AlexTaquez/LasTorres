@@ -82,7 +82,10 @@ public class ApartamentoDAO extends Conexion {
             
             lista.add(torre);
         }
-
+        
+        con.commit();
+        psTorres.close();
+        con.close();
         return lista;
     }
     
@@ -114,7 +117,9 @@ public class ApartamentoDAO extends Conexion {
             
             lista.add(apt);
         }
-       
+        con.commit();
+        ps.close();
+        con.close();
         return lista;
     }
     //LISTA DE APARTAMENTOS DISPONIBLES POR TORRE
@@ -145,7 +150,9 @@ public class ApartamentoDAO extends Conexion {
             
             lista.add(apt);
         }
-       
+        con.commit();
+        ps.close();
+        con.close();
         return lista;
     }
     //ACTUALIZAR  
@@ -209,10 +216,14 @@ public class ApartamentoDAO extends Conexion {
                 apt.setEstado(resultSet.getString(6));
                 apt.setDescripcion(resultSet.getString(7));
                 
+                con.commit();
+                ps.close();
+                con.close();
                 return apt;
             }
-            
-            //System.out.println("RETURN");
+            con.commit();
+            ps.close();
+            con.close();
             return null;
             
         }catch(SQLException e){

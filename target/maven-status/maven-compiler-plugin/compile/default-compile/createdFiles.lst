@@ -1,11 +1,14 @@
 com\pakages\entities\Residente.class
 com\pakages\dao\ApartamentoDAO.class
 com\pakages\dao\ResidenteDAO.class
+com\pakages\entities\Comentario.class
 com\pakages\services\ResidenteService.class
 com\pakages\entities\Evento.class
 com\pakages\dao\ObtenerFecha.class
 com\pakages\dao\EventoDAO.class
+com\pakages\services\ComentarioService.class
 com\pakages\services\FormService.class
+com\pakages\dao\ComentarioDAO.class
 com\pakages\servlet\ApartamentoServlet.class
 com\pakages\servlet\ResidenteServlet.class
 com\pakages\dao\Conexion.class
