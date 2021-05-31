@@ -47,9 +47,9 @@ public class ComentarioService {
     }
         
     @POST// COMENTAR
-    @Path("/set")
     @Consumes({MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_JSON})
+    @Path("/set")
     public boolean setEvent(Comentario com) throws SQLException{
         ComentarioDAO dao = new ComentarioDAO();
         System.out.println("POST COMENT "+com.getMensaje());

@@ -6,7 +6,7 @@
     <%@include file="../platillas/head.html" %>
     <body>
         <%@include file="../platillas/menubar.html" %>
-        <h1><c:out value="${opcion}"></c:out> </h1>
+        <h1>TORRES </h1>
         
          <table class="responsive striped">
             <tr>                

@@ -41,8 +41,7 @@ public class EventoService {
     @Produces({MediaType.APPLICATION_JSON})
     public List<Evento> getEvent() throws SQLException{
         EventoDAO dao = new EventoDAO();
-        List<Evento> lista;
-        lista = dao.listaVigentes();
+        List<Evento> lista = dao.listaVigentes();
         
         System.out.println("API EVENT GET>>>");
         

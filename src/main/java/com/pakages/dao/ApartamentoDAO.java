@@ -58,27 +58,33 @@ public class ApartamentoDAO extends Conexion {
         con.setAutoCommit(false);
 
         String sql ="SELECT idTorre, nombre, nPisos, nApt, " +
-                    "(SELECT COUNT(idApt) FROM apartamento " +
-                    "WHERE idTorre=torre.idTorre AND estado = 'O'), " +//OCUPADOS
-                    "(SELECT COUNT(idApt) FROM apartamento " +
-                    "WHERE idTorre=torre.idTorre AND estado = 'D'), " +//DESOCUPADOS O DISPONIBLES
-                    "(SELECT COUNT(idApt) FROM apartamento " +
-                    "WHERE idTorre=torre.idTorre AND estado = 'M') " +//EN MANTENIMIENTO
-                    "FROM torre";
+            " (SELECT COUNT(idApt) FROM apartamento " +
+            " WHERE idTorre=torre.idTorre AND estado = 'O'), " +//OCUPADOS
+                
+            " (SELECT COUNT(idApt) FROM apartamento " +
+            " WHERE idTorre=torre.idTorre AND estado = 'D'), " +//DESOCUPADOS O DISPONIBLES
+                
+            " (SELECT COUNT(idApt) FROM apartamento " +
+            " WHERE idTorre=torre.idTorre AND estado = 'M') " +//EN MANTENIMIENTO
+            " FROM torre";
         
         psTorres = con.prepareStatement(sql);
         ResultSet resultSet = psTorres.executeQuery(sql);
         
         while (resultSet.next()) {
                        
-            Torre torre = new Torre();
+            Torre torre = new Torre();            
             torre.setId(resultSet.getInt(1));
             torre.setNombre(resultSet.getString(2));
             torre.setPisos(resultSet.getInt(3));
             torre.setApts(resultSet.getInt(4));
-            torre.setApts(resultSet.getInt(5));
-            torre.setApts(resultSet.getInt(6));
-            torre.setApts(resultSet.getInt(7));            
+            torre.setOcupados(resultSet.getInt(5));
+            torre.setDisponibles(resultSet.getInt(6));
+            torre.setReparacion(resultSet.getInt(7));      
+            
+            System.out.println("LISTA>>>"+ torre.getNombre());
+            System.out.println("LISTA>>>"+ torre.getOcupados());
+            System.out.println("LISTA>>>"+ torre.getDisponibles());
             
             lista.add(torre);
         }

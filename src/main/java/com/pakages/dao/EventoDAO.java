@@ -219,7 +219,7 @@ public class EventoDAO extends Conexion {
        
        PreparedStatement ps;
        Connection con;       
-       con = getConnection();
+       con = getConnection();//LINIA CON ERROR
        con.setAutoCommit(false);
        
        String sql = "SELECT * FROM evento" +
@@ -307,9 +307,4 @@ public class EventoDAO extends Conexion {
         }
     }
     
-    
-    private void cambiaEstado(){
-    
-    
-    }
 }

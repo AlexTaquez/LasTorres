@@ -1,6 +1,5 @@
 package com.pakages.entities;
 
-import java.util.Date;
 import java.util.List;
 
 /**

@@ -6,12 +6,16 @@ C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\j
 C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\services\FormService.java
 C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\services\ResidenteService.java
 C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\services\ComentarioService.java
+C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\servlet\DeudorServlet.java
+C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\entities\Deudor.java
 C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\entities\Torre.java
 C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\servlet\EventoServlet.java
 C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\dao\ApartamentoDAO.java
 C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\dao\Conexion.java
 C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\servlet\ResidenteServlet.java
 C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\entities\Habitante.java
+C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\dao\ConsultasDAO.java
+C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\services\DeudoresService.java
 C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\dao\ResidenteDAO.java
 C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\services\EventoService.java
 C:\Users\Usuario\Documents\UNIVERCIDAD\2021-1\BASE DE DATOS\LasTorres\src\main\java\com\pakages\dao\EventoDAO.java
