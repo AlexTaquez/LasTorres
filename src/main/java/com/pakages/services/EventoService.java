@@ -36,7 +36,6 @@ public class EventoService {
     }
     
     @GET//EVENTOS VIGENTES
-    @GetMapping("/list")
     @Consumes({MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_JSON})
     public List<Evento> getEvent() throws SQLException{

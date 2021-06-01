@@ -18,7 +18,7 @@
                         <div class="card-content">
                         <h2 style="text-align:center;"><c:out value="${opcion}"></c:out></h2>
 
-                            <div class="row  ">
+                            <div class="row">
                                 <form action="/Admin/apt" method="post"  class="col s12" style="margin-top: 15px;">
 
                                     <input type="number" name="id"value="${apartamento.id}" hidden="true"/>
