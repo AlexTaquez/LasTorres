@@ -131,7 +131,7 @@ public class ResidenteDAO extends Conexion{
             }
         }
     }
-    //LISTAR
+    //LISTAR DE RESIDENTES DISTINOS POR APARTAMENTO
     public List<Residente> lista(int idTorre) throws SQLException{
        List<Residente> lista = new ArrayList<>();
        

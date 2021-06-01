@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ConsultasDAO extends Conexion{
     
-    //LISTAR
+    //LISTA DE DEUDORES
     public List<Deudor> listaDeudores() throws SQLException{
        List<Deudor> lista = new ArrayList<>();
        
@@ -23,9 +23,9 @@ public class ConsultasDAO extends Conexion{
             " SELECT F.idFactura, F.valor, F.residenteFk, F.aptFk, F.termino, F.estado," +
             " R.nombres, R.apellidos" +
             " FROM residente R JOIN factura F" +
-            " ON R.idResidente=F.residenteFk) FA" +
+            " ON R.idResidente=F.residenteFk) FA" +//FACTURA JOIN RESIDENTE
         " JOIN (" +
-            " SELECT A.idApt, A.piso, A.numero, T.nombre" +
+            " SELECT A.idApt, A.piso, A.numero, T.nombre" +//APARTAMENTO JOIN TORRE
             " FROM apartamento A JOIN torre T" +
             " ON A.idTorre=T.idTorre" +
             " )AP ON FA.aptFK = AP.idApt" +
